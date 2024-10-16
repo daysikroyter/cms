@@ -1,0 +1,29 @@
+<form action="" class="w-full max-w-md p-8 bg-white rounded-lg shadow-md">
+  <span class="text-2xl font-bold mb-6 text-gray-800 block">Sign in</span>
+  <label>
+    <span class="block text-sm font-medium text-gray-700">Email</span>
+    <input
+      type="text"
+      id="username"
+      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm ng-pristine ng-invalid ng-touched"
+      placeholder="you@example.com"
+      (blur)="onBlur('username')"
+    />
+  </label>
+  <label>
+    <span class="block text-sm font-medium text-gray-700"> Password </span>
+    <input
+      id="password"
+      type="password"
+      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm ng-pristine ng-invalid ng-touched"
+      (blur)="onBlur('password')"
+    />
+  </label>
+  <button
+    class="w-full py-2 px-4 bg-main text-white font-semibold rounded-md shadow-sm hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2"
+    type="submit"
+  >
+    Sign in
+  </button>
+  <p>Don't have an account? <a href="/">Sign up</a></p>
+</form>

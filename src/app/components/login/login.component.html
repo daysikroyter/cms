@@ -1,29 +1,45 @@
-<form action="" class="w-full max-w-md p-8 bg-white rounded-lg shadow-md">
+<form (ngSubmit)="onSubmit()" action="" class="max-w-md p-8 bg-white rounded-lg shadow-md w-450">
   <span class="text-2xl font-bold mb-6 text-gray-800 block">Sign in</span>
-  <label>
+
+  <label class="mb-4 block">
     <span class="block text-sm font-medium text-gray-700">Email</span>
     <input
-      type="text"
-      id="username"
-      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm ng-pristine ng-invalid ng-touched"
+      type="email"
+      id="email"
+      name="email"
+      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm"
       placeholder="you@example.com"
-      (blur)="onBlur('username')"
+      [(ngModel)]="email"
+      (blur)="onBlur('email')"
+      required
     />
+    <p *ngIf="emailError" class="text-red-500 text-sm mt-1">{{ emailError }}</p>
   </label>
-  <label>
-    <span class="block text-sm font-medium text-gray-700"> Password </span>
+
+  <label class="mb-4 block">
+    <span class="block text-sm font-medium text-gray-700">Password</span>
     <input
       id="password"
+      name="password"
       type="password"
-      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm ng-pristine ng-invalid ng-touched"
+      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm"
+      placeholder="9x$Wq8m!Tp2b@z"
+      [(ngModel)]="password"
       (blur)="onBlur('password')"
+      required
     />
+    <p *ngIf="passwordError" class="text-red-500 text-sm mt-1">{{ passwordError }}</p>
   </label>
+
   <button
-    class="w-full py-2 px-4 bg-main text-white font-semibold rounded-md shadow-sm hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2"
+    class="mt-2 w-full py-2 px-4 bg-main text-white font-semibold rounded-md shadow-sm hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 mb-4 transition duration-200 ease-in-out"
     type="submit"
   >
     Sign in
   </button>
-  <p>Don't have an account? <a href="/">Sign up</a></p>
+
+  <p class="text-center">
+    Don't have an account?
+    <a href="/" class="text-main">Sign up</a>
+  </p>
 </form>

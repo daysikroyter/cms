@@ -1,0 +1,112 @@
+<form (ngSubmit)="onSubmit()" class="max-w-md p-8 bg-white rounded-lg shadow-md w-450">
+  <span class="text-2xl font-bold mb-6 text-gray-800 block">Sign up</span>
+
+  <label class="mb-4 block">
+    <span class="block text-sm font-medium text-gray-700">First Name</span>
+    <input
+      type="text"
+      id="firstName"
+      name="firstName"
+      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm"
+      placeholder="John"
+      [(ngModel)]="firstName"
+      (blur)="onBlur('firstName')"
+      required
+    />
+    @if (firstNameError) {
+      <p class="text-red-500 text-sm mt-1">{{ firstNameError }}</p>
+    }
+  </label>
+
+  <label class="mb-4 block">
+    <span class="block text-sm font-medium text-gray-700">Last Name</span>
+    <input
+      type="text"
+      id="lastName"
+      name="lastName"
+      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm"
+      placeholder="Smith"
+      [(ngModel)]="lastName"
+      (blur)="onBlur('lastName')"
+      required
+    />
+    @if (lastNameError) {
+      <p class="text-red-500 text-sm mt-1">{{ lastNameError }}</p>
+    }
+  </label>
+
+  <label class="mb-4 block">
+    <span class="block text-sm font-medium text-gray-700">Phone Number</span>
+    <input
+      type="tel"
+      id="phone"
+      name="phone"
+      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm"
+      placeholder="123-456-7890"
+      [(ngModel)]="phone"
+      (blur)="validatePhone()"
+      required
+    />
+    @if (phoneError) {
+      <p class="text-red-500 text-sm mt-1">{{ phoneError }}</p>
+    }
+  </label>
+
+  <label class="mb-4 block">
+    <span class="block text-sm font-medium text-gray-700">Email</span>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm"
+      placeholder="you@example.com"
+      [(ngModel)]="email"
+      (blur)="onBlur('email')"
+      required
+    />
+    @if (emailError) {
+      <p class="text-red-500 text-sm mt-1">{{ emailError }}</p>
+    }
+  </label>
+
+  <label class="mb-4 block">
+    <span class="block text-sm font-medium text-gray-700">Password</span>
+    <input
+      id="password"
+      name="password"
+      type="password"
+      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm"
+      placeholder="9x$Wq8m!Tp2b@z"
+      [(ngModel)]="password"
+      (blur)="onBlur('password')"
+      required
+    />
+    @if (passwordError) {
+      <p class="text-red-500 text-sm mt-1">{{ passwordError }}</p>
+    }
+  </label>
+
+  <label class="mb-4 block">
+    <span class="block text-sm font-medium text-gray-700">Confirm Password</span>
+    <input
+      id="confirm_password"
+      name="confirm_password"
+      type="password"
+      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm"
+      placeholder="9x$Wq8m!Tp2b@z"
+      [(ngModel)]="confirmPassword"
+      (blur)="onBlur('confirmPassword')"
+      required
+    />
+    @if (confirmPasswordError) {
+      <p class="text-red-500 text-sm mt-1">{{ confirmPasswordError }}</p>
+    }
+  </label>
+
+  <button
+    class="mt-2 w-full py-2 px-4 bg-main text-white font-semibold rounded-md shadow-sm hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 mb-4 transition duration-200 ease-in-out"
+    type="submit"
+  >
+    Sign up
+  </button>
+</form>

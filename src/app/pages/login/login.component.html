@@ -13,7 +13,9 @@
       (blur)="onBlur('email')"
       required
     />
-    <p *ngIf="emailError" class="text-red-500 text-sm mt-1">{{ emailError }}</p>
+    @if (emailError) {
+      <p class="text-red-500 text-sm mt-1">{{ emailError }}</p>
+    }
   </label>
 
   <label class="mb-4 block">
@@ -28,7 +30,9 @@
       (blur)="onBlur('password')"
       required
     />
-    <p *ngIf="passwordError" class="text-red-500 text-sm mt-1">{{ passwordError }}</p>
+    @if (passwordError) {
+      <p class="text-red-500 text-sm mt-1">{{ passwordError }}</p>
+    }
   </label>
 
   <button
@@ -40,6 +44,6 @@
 
   <p class="text-center">
     Don't have an account?
-    <a href="/" class="text-main">Sign up</a>
+    <a href="/sign-up" class="text-main">Sign up</a>
   </p>
 </form>
